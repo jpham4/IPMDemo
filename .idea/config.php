@@ -12,3 +12,7 @@ $opt = [
 ];
 
 $dsn = new pdo("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass, $opt);
+
+if (!$dsn){
+    echo "Unable to connect to database";
+}
