@@ -1,8 +1,15 @@
 <?php
-session_start();
-$role = $_SESSION['sess_userrole'];
-if(!isset($_SESSION['sess_email']) || $role!="admin"){
-    header('Location: login.php?err=2');
+include('../authenticate.php');
+
+if (!isAdmin()) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: ../login.php');
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['user']);
+    header("location: ../login.php");
 }
 ?>
 <!doctype html>
@@ -26,11 +33,15 @@ if(!isset($_SESSION['sess_email']) || $role!="admin"){
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IPM</a>
     <ul class="navbar-nav px-3">
+        <?php  if (isset($_SESSION['user'])) : ?>
         <li class="nav-item text-nowrap">
-            <a href="#"><?php echo $_SESSION['sess_email'];?></a>
-            <a class="nav-link" href="logout.php">Sign out</a>
+            <a class="navbar-text"><?php echo $_SESSION['user']['username']; ?></a>
+        </li>
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="admin_index.php?logout='1'">Sign out</a>
         </li>
     </ul>
 </nav>
+<?php endif ?>
 </body>
 </html>

@@ -1,12 +1,10 @@
-
 <?php
-session_start();
-$role = $_SESSION['sess_userrole'];
-if(!isset($_SESSION['sess_email']) || $role!="user"){
-    header('Location: login.php?err=2');
+include('authenticate.php');
+if (!isLoggedIn()){
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -28,13 +26,16 @@ if(!isset($_SESSION['sess_email']) || $role!="user"){
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IPM</a>
       <ul class="navbar-nav px-3">
+          <?php  if (isset($_SESSION['user'])) : ?>
+          <li class="nav-item text-nowrap">
+              <a class="navbar-text"><?php echo $_SESSION['user']['username']; ?></a>
+          </li>
         <li class="nav-item text-nowrap">
-            <a href="#"><?php echo $_SESSION['sess_email'];?></a>
-          <a class="nav-link" href="logout.php">Sign out</a>
+          <a class="nav-link" href="index.php?logout='1'">Sign out</a>
         </li>
       </ul>
     </nav>
-
+<?php endif ?>
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -60,13 +61,6 @@ Integrations
                 </a>
               </li>
             </ul>
-
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-              <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
-                <span data-feather="plus-circle"></span>
-              </a>
-            </h6>
           </div>
         </nav>
 

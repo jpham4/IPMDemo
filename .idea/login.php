@@ -1,3 +1,4 @@
+<?php include ('authenticate.php') ?>
 
 <!doctype html>
 <html lang="en">
@@ -19,6 +20,7 @@
 
   <body class="text-center">
       <form action="authenticate.php" method="post" class="form-signin">
+          <?php echo display_error(); ?>
       <img class="mb-4" src="/images/ipmlogo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -26,6 +28,7 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" value="Login" type="submit">Sign in</button>
+          <p>Not a member yet? <a href="register.php">Sign Up</a> </p>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
   </body>
