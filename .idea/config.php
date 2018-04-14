@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = 'ShujinHigh5';
-$db = 'simpledata';
+$db = 'ipm_testdb';
 $charset = 'utf8mb4';
 
 $opt = [
@@ -11,8 +11,9 @@ $opt = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
-$dsn = new pdo("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass, $opt);
+$dbh = new pdo("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass, $opt);
 
-if (!$dsn){
+if (!$dbh){
     echo "Unable to connect to database";
 }
+?>

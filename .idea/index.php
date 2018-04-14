@@ -1,8 +1,9 @@
+
 <?php
-include "config.php";
 session_start();
-if (isset($_SESSION['email'])){
-    header('location: login.php');
+$role = $_SESSION['sess_userrole'];
+if(!isset($_SESSION['sess_email']) || $role!="user"){
+    header('Location: login.php?err=2');
 }
 ?>
 
@@ -28,7 +29,8 @@ if (isset($_SESSION['email'])){
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IPM</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+            <a href="#"><?php echo $_SESSION['sess_email'];?></a>
+          <a class="nav-link" href="logout.php">Sign out</a>
         </li>
       </ul>
     </nav>
