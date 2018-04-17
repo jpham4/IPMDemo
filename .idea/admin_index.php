@@ -35,7 +35,7 @@ if (isset($_GET['logout'])) {
     <ul class="navbar-nav px-3">
         <?php  if (isset($_SESSION['user'])) : ?>
         <li class="nav-item text-nowrap">
-            <a class="navbar-text"><?php echo $_SESSION['user']['username']; ?></a>
+            <a class="navbar-text"><?php echo $_SESSION['user']['email']; ?></a>
         </li>
         <li class="nav-item text-nowrap">
             <a class="nav-link" href="admin_index.php?logout='1'">Sign out</a>

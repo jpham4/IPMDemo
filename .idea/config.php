@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$user = 'jpham';
-$pass = 'BlueVice201';
+$user = 'root';
+$pass = 'ShujinHigh5';
 $db = 'ipm_testdb';
 $charset = 'utf8mb4';
 

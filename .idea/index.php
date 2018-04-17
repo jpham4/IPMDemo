@@ -24,14 +24,15 @@ if (!isLoggedIn()){
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">IPM</a>
-      <ul class="navbar-nav px-3">
+      <a class="navbar-brand col-sm-3 col-md-2" href="#">IPM</a>
+      <ul class="nav navbar-nav navbar-right">
           <?php  if (isset($_SESSION['user'])) : ?>
-          <li class="nav-item text-nowrap">
-              <a class="navbar-text"><?php echo $_SESSION['user']['username']; ?></a>
+          <li>
+              <a style="color: #ffffff;"><?php echo $_SESSION['user']['email']; ?></a>
+              <small><i  style="color: #ffffff;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i></small>
           </li>
-        <li class="nav-item text-nowrap">
-          <a class="nav-link" href="index.php?logout='1'">Sign out</a>
+        <li>
+          <a href="index.php?logout='1'">Sign out</a>
         </li>
       </ul>
     </nav>
