@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', 'ShujinHigh5', 'ipm_testdb');
+$db = mysqli_connect('localhost', 'jpham', 'BlueVice201', 'ipm_testdb');
 
 // variable declaration
 

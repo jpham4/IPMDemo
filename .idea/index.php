@@ -24,7 +24,7 @@ if (!isLoggedIn()){
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2" href="#">IPM</a>
+      <a class="navbar-brand col-sm-3 col-md-2" href="index.php">IPM</a>
       <ul class="nav navbar-nav navbar-right">
           <?php  if (isset($_SESSION['user'])) : ?>
           <li>
@@ -49,7 +49,7 @@ Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="transactions.php">
                   <span data-feather="trending-up"></span>
 Transactions
                 </a>
