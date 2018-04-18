@@ -29,7 +29,7 @@
       <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" value="Login" name="login_btn" type="submit">Sign in</button>
           <p>Not a member yet? <a href="register.php">Sign Up</a> </p>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted">&copy; IPM</p>
     </form>
   </body>
 </html>

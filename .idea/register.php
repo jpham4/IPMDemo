@@ -19,23 +19,20 @@
     <link href="register.css" rel="stylesheet">
 </head>
 <body class="text-center">
-<div class="header">
-    <h2>Register</h2>
-</div>
 <form method="post" action="register.php" class="form-group">
     <?php echo display_error(); ?>
-
+    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
     <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" name="email" value="<?php echo $email; ?>">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus value="<?php echo $email; ?>">
     </div>
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" name="password_1">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" name="password_1" placeholder="Password" required autofocus>
     </div>
     <div class="form-group">
-        <label>Confirm password</label>
-        <input type="password" class="form-control" name="password_2">
+        <label for="inputPassword2" class="sr-only">Confirm Password</label>
+        <input type="password" id="inputPassword2" class="form-control" name="password_2" placeholder="Confirm Password" required autofocus>
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-lg btn-primary btn-block" name="register_btn">Register</button>

@@ -25,7 +25,7 @@ if (!isLoggedIn()){
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2" href="index.php">IPM</a>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navbar-nav px-2">
           <?php  if (isset($_SESSION['user'])) : ?>
           <li>
               <a style="color: #ffffff;"><?php echo $_SESSION['user']['email']; ?></a>

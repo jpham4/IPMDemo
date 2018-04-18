@@ -1,4 +1,4 @@
-
+<?php include('authenticate.php');?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,12 +19,18 @@
 <body>
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2" href="index.php">IPM</a>
-    <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="logout.php">Sign out</a>
+    <ul class="navbar-nav px-2">
+        <?php  if (isset($_SESSION['user'])) : ?>
+        <li>
+            <a style="color: #ffffff;"><?php echo $_SESSION['user']['email']; ?></a>
+            <small><i  style="color: #ffffff;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i></small>
+        </li>
+        <li>
+            <a href="index.php?logout='1'">Sign out</a>
         </li>
     </ul>
 </nav>
+<?php endif; ?>
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -60,6 +66,33 @@
         </main>
     </div>
 </div>
+
+<div class="container-fluid">
+    <div class="col-sm-6 ml-md-auto col-sm-2 pt-3 px-4">
+<div class="card">
+    <h5 class="card-header">Featured</h5>
+    <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../assets/js/vendor/popper.min.js"></script>
+<script src="../../../../dist/js/bootstrap.min.js"></script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+<script>
+    feather.replace()
+</script>
 </body>
 </html>
 
