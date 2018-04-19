@@ -162,3 +162,19 @@ function isAdmin(){
         return false;
     }
 }
+
+//call the delete() function if delete_btn is clicked
+if (isset($_POST['delete_btn'])){
+    delete();
+}
+
+function delete(){
+    $delete_id=$_GET['del'];
+    $delete_query="DELETE from Account WHERE id='$delete_id'";//delete query
+    $run=mysqli_query($db,$delete_query);
+    if($run)
+    {
+//javascript function to open in the same window
+        echo "<script>window.open('admin_index.php?deleted=user has been deleted','_self')</script>";
+    }
+}

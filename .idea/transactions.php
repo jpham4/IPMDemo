@@ -69,18 +69,15 @@
 
 <div class="container-fluid">
     <div class="row">
-    <div class="col-md-5 ml-md-auto col-sm-3 pt-3 px-1">
+    <div class="col-md-5 ml-md-auto col-sm-3 pt-5 px-2">
 <div class="card">
     <h5 class="card-header">Add Investment</h5>
     <div class="card-body">
         <h5 class="card-title">Choose Investment Type</h5>
         <p class="card-text">Choose which type of investment type you would like to add.</p>
         <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text" for="inputGroupSelect01">Type:</label>
-            </div>
             <select class="custom-select" id="inputGroupSelect01">
-                <option selected>Choose...</option>
+                <option selected disabled>Select investment</option>
                 <option value="1">Stocks</option>
                 <option value="2">Bonds</option>
                 <option value="3">Cryptocurrency</option>
@@ -92,18 +89,15 @@
     </div>
 </div>
 </div>
-    <div class="col-md-5 ml-md-1 mr-2 col-sm-3 pt-3 px-1">
+    <div class="col-md-5 ml-md-1 mr-2 col-sm-3 pt-5 px-2">
         <div class="card">
             <h5 class="card-header">Remove Investment</h5>
             <div class="card-body">
                 <h5 class="card-title">Choose Investment Type</h5>
                 <p class="card-text">Choose which type of investment type you would like to remove.</p>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect02">Type:</label>
-                    </div>
                     <select class="custom-select" id="inputGroupSelect02">
-                        <option selected>Choose...</option>
+                        <option selected disabled>Select investment</option>
                         <option value="1">Stocks</option>
                         <option value="2">Bonds</option>
                         <option value="3">Cryptocurrency</option>
