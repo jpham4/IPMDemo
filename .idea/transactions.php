@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Custom styles for this template -->
-    <link href="index.css" rel="stylesheet">
+    <link href="transactions.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="index.php">
                             <span data-feather="home"></span>
                             Dashboard
                         </a>
@@ -68,25 +68,63 @@
 </div>
 
 <div class="container-fluid">
-    <div class="col-sm-6 ml-md-auto col-sm-2 pt-3 px-4">
+    <div class="row">
+    <div class="col-md-5 ml-md-auto col-sm-3 pt-3 px-1">
 <div class="card">
-    <h5 class="card-header">Featured</h5>
+    <h5 class="card-header">Add Investment</h5>
     <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Choose Investment Type</h5>
+        <p class="card-text">Choose which type of investment type you would like to add.</p>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Type:</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">Stocks</option>
+                <option value="2">Bonds</option>
+                <option value="3">Cryptocurrency</option>
+            </select>
+        </div>
+        <div class="container">
+        <button type="submit" class="btn btn-md btn-primary" value="Submit" name="addSubmit">Submit</button>
+        </div>
     </div>
 </div>
 </div>
+    <div class="col-md-5 ml-md-1 mr-2 col-sm-3 pt-3 px-1">
+        <div class="card">
+            <h5 class="card-header">Remove Investment</h5>
+            <div class="card-body">
+                <h5 class="card-title">Choose Investment Type</h5>
+                <p class="card-text">Choose which type of investment type you would like to remove.</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect02">Type:</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect02">
+                        <option selected>Choose...</option>
+                        <option value="1">Stocks</option>
+                        <option value="2">Bonds</option>
+                        <option value="3">Cryptocurrency</option>
+                    </select>
+                </div>
+                <div class="container">
+                <button type="submit" class="btn btn-md btn-primary" value="Submit" name="removeSubmit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../../../assets/js/vendor/popper.min.js"></script>
-<script src="../../../../dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>

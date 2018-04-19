@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = mysqli_connect('localhost', 'root', 'ShujinHigh5', 'ipm_testdb');
+$db = mysqli_connect('ipmdb.cks4nsnfrygm.us-east-1.rds.amazonaws.com', 'eddie', 'password', 'ipmdatabse');
 
 // variable declaration
 
@@ -43,13 +43,13 @@ function register(){
 
         if (isset($_POST['user_type'])) {
             $user_type = e($_POST['user_type']);
-            $query = "INSERT INTO users (email, user_type, password) 
+            $query = "INSERT INTO Account (email, user_type, password) 
 					  VALUES('$email', '$user_type', '$password')";
             mysqli_query($db, $query);
             $_SESSION['success']  = "New user successfully created!!";
             header('location: admin_index.php');
         }else{
-            $query = "INSERT INTO users ( email, user_type, password) 
+            $query = "INSERT INTO Account ( email, user_type, password) 
 					  VALUES('$email', 'user', '$password')";
             mysqli_query($db, $query);
 
@@ -66,7 +66,7 @@ function register(){
 // return user array from their id
 function getUserById($id){
     global $db;
-    $query = "SELECT * FROM users WHERE id=" . $id;
+    $query = "SELECT * FROM Account WHERE id=" . $id;
     $result = mysqli_query($db, $query);
 
     $user = mysqli_fetch_assoc($result);
@@ -132,7 +132,7 @@ function login(){
     if (count($errors) == 0) {
         $password = md5($password);
 
-        $query = "SELECT * FROM users WHERE email='$email' AND password='$password' LIMIT 1";
+        $query = "SELECT * FROM Account WHERE email='$email' AND password='$password' LIMIT 1";
         $results = mysqli_query($db, $query);
 
         if (mysqli_num_rows($results) == 1) { // user found
