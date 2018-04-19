@@ -222,6 +222,7 @@ if (!isLoggedIn()) {
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="../../../../dist/js/bootstrap.min.js"></script>
 
@@ -234,33 +235,57 @@ if (!isLoggedIn()) {
 <!-- Graphs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+$(document).ready(function(){
+  $.ajax({
+    url : "http://localhost:8888/IPMDemo/idea/wothdata.php",
+    type : "GET",
+    success : function(data){
+      console.log(data);
+
+      var userworth = [];
+      var dates = [];
+
+      for(var i in data) {
+        userworth.push(data[i].worth);
+        dates.push(data[i].date_posted);
+      }
+
+      console.log(userworth);
+      console.log(dates);
+
+    var result=[];
+    for (var i=0,l=userworth.length;i<l;i++) result.push(parseFloat(userworth[i])); // or parseInt(arr[i]) or Number(arr[i])
+
+    console.log(result);
+
+      var chartdata = {
+        labels: dates,
+        datasets: [
+          {
+            label: "Account Worth Over Time",
+            fill: false,
+            lineTension: 0.1,
+            backgroundColor: "rgba(59, 89, 152, 0.75)",
+            borderColor: "rgba(59, 89, 152, 1)",
+            pointHoverBackgroundColor: "rgba(59, 89, 152, 1)",
+            pointHoverBorderColor: "rgba(59, 89, 152, 1)",
+            data: result
+          }
+        ]
+      };
+
+      var ctx = document.getElementById("myChart"); //$("#mycanvas");
+
+      var LineGraph = new Chart(ctx, {
         type: 'line',
-        data: {
-            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            datasets: [{
-                data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                lineTension: 0,
-                backgroundColor: 'transparent',
-                borderColor: '#007bff',
-                borderWidth: 4,
-                pointBackgroundColor: '#007bff'
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
+        data: chartdata
+      });
+    },
+    error : function(data) {
+
+    }
+  });
+});
 </script>
 </body>
 </html>
