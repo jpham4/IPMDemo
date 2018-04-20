@@ -221,8 +221,8 @@ if (!isLoggedIn()) {
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="../../../../assets/js/vendor/popper.min.js"></script>
 <script src="../../../../dist/js/bootstrap.min.js"></script>
 
@@ -237,7 +237,7 @@ if (!isLoggedIn()) {
 <script>
 $(document).ready(function(){
   $.ajax({
-    url : "http://localhost:8888/IPMDemo/idea/wothdata.php",
+    url : "wothdata.php",
     type : "GET",
     success : function(data){
       console.log(data);
@@ -254,7 +254,7 @@ $(document).ready(function(){
       console.log(dates);
 
     var result=[];
-    for (var i=0,l=userworth.length;i<l;i++) result.push(parseFloat(userworth[i])); // or parseInt(arr[i]) or Number(arr[i])
+    for (i=0,l=userworth.length;i<l;i++) result.push(parseFloat(userworth[i])); // or parseInt(arr[i]) or Number(arr[i])
 
     console.log(result);
 

@@ -170,7 +170,7 @@ if (isset($_POST['delete_btn'])){
 
 function delete(){
     $delete_id=$_GET['del'];
-    $delete_query="DELETE from Account WHERE id='$delete_id'";//delete query
+    $delete_query="DELETE from Account WHERE user_type ='user'";//delete query
     $run=mysqli_query($db,$delete_query);
     if($run)
     {

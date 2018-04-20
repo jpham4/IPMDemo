@@ -10,6 +10,8 @@
 
     <title>Transactions</title>
 
+    <!-- Javascript -->
+    <script type="text/javascript" src="transactions.js"></script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -78,13 +80,12 @@
         <div class="input-group mb-3">
             <select class="custom-select" id="inputGroupSelect01">
                 <option selected disabled>Select investment</option>
-                <option value="1">Stocks</option>
-                <option value="2">Bonds</option>
-                <option value="3">Cryptocurrency</option>
+                <option value="AddStocks">Stocks</option>
+                <option value="AddCrypto">Cryptocurrency</option>
             </select>
         </div>
         <div class="container">
-        <button type="submit" class="btn btn-md btn-primary" value="Submit" name="addSubmit">Submit</button>
+        <button type="submit" class="btn btn-md btn-primary" onclick="addSelect()" value="Submit">Submit</button>
         </div>
     </div>
 </div>
@@ -99,8 +100,7 @@
                     <select class="custom-select" id="inputGroupSelect02">
                         <option selected disabled>Select investment</option>
                         <option value="1">Stocks</option>
-                        <option value="2">Bonds</option>
-                        <option value="3">Cryptocurrency</option>
+                        <option value="2">Cryptocurrency</option>
                     </select>
                 </div>
                 <div class="container">

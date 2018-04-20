@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
     </ul>
 </nav>
 <?php endif; ?>
-<div class="container-fluid">
+<!--<div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
@@ -80,17 +80,18 @@ if (isset($_GET['logout'])) {
         </main>
     </div>
 </div>
-
-<h2>Users</h2>
+-->
+<h2>Admin</h2>
 <div class="table-responsive">
-    <table class="table table-bordered table-hover table-striped table-sm">
+    <table class="table table-striped table-sm">
         <thead>
         <tr>
-            <th>User ID</th>
-            <th>User Email</th>
-            <th>Delete User</th>
+            <th style="width: 30%">User ID</th>
+            <th style="width: 50%">User Email</th>
+            <th style="width: 10%">Delete User</th>
         </tr>
         </thead>
+        <tbody>
         <?php $view_users_query = "SELECT * FROM Account WHERE user_type='user'";
         $run = mysqli_query($db, $view_users_query);
         while ($row = mysqli_fetch_array($run)) {
@@ -105,8 +106,8 @@ if (isset($_GET['logout'])) {
                         <button class="btn btn-danger" name="delete_btn">Delete</button></a>
                 </td>
             </tr>
-
         <?php } ?>
+        </tbody>
     </table>
 </div>
 <!-- Bootstrap core JavaScript
