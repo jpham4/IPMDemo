@@ -1,12 +1,13 @@
 function addSelect() {
-    var select = document.getElementById('inputGroupSelect01');
+    var select = document.getElementById('inputGroupSelect01').value;
     switch (select){
         case "AddStocks":
-            alert("Add Stocks works");
             var url = "addStocks.php";
-
             location.href = url + "?selectedVal=AddStocks";
             break;
+        case "AddCrypto":
+            var url2 = "addCrypto.php";
+            location.href = url2 + "?selectedVal=AddCrypto";
         default:
     }
     return false;

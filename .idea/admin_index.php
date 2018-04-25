@@ -95,18 +95,37 @@ if (isset($_GET['logout'])) {
         <?php $view_users_query = "SELECT * FROM Account WHERE user_type='user'";
         $run = mysqli_query($db, $view_users_query);
         while ($row = mysqli_fetch_array($run)) {
-            $user_id = $row[0];
-            $user_email = $row[1];
+            $user_id = $row['id'];
+            $user_email = $row['email'];
             ?>
             <tr>
                 <!-- Showing results in the table -->
                 <td><?php echo $user_id; ?></td>
                 <td><?php echo $user_email; ?></td>
-                <td><a href="admin_index.php?del=<?php echo $user_id ?>">
-                        <button class="btn btn-danger" name="delete_btn">Delete</button></a>
+                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#basicModal">Delete</a>
                 </td>
             </tr>
         <?php } ?>
+        <!-- basic modal -->
+        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you really want to delete this user? This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <a href="delete.php?del=<?php echo $user_id ?>"><button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </tbody>
     </table>
 </div>

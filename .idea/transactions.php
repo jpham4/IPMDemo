@@ -10,8 +10,6 @@
 
     <title>Transactions</title>
 
-    <!-- Javascript -->
-    <script type="text/javascript" src="transactions.js"></script>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Custom styles for this template -->
@@ -78,7 +76,7 @@
         <h5 class="card-title">Choose Investment Type</h5>
         <p class="card-text">Choose which type of investment type you would like to add.</p>
         <div class="input-group mb-3">
-            <select class="custom-select" id="inputGroupSelect01">
+            <select class="custom-select" id="inputGroupSelect01" name="inputGroupSelect01">
                 <option selected disabled>Select investment</option>
                 <option value="AddStocks">Stocks</option>
                 <option value="AddCrypto">Cryptocurrency</option>
@@ -115,6 +113,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="transactions.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
