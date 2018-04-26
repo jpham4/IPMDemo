@@ -1,5 +1,5 @@
 <?php
-include ("authenticate.php");?>
+include("authenticate.php");?>
 
 <!doctype html>
 <html lang="en">
@@ -18,7 +18,7 @@ include ("authenticate.php");?>
     <link href="transactions.css" rel="stylesheet">
 </head>
 <body>
-<h2>Cryptocurrency</h2>
+<h2>Stocks</h2>
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped table-sm">
         <thead>
@@ -29,8 +29,8 @@ include ("authenticate.php");?>
             <th>Value</th>
         </tr>
         </thead>
-        <?php $view_crypto_query = "SELECT * FROM Assets WHERE type ='crypto'";
-        $show = mysqli_query($db, $view_crypto_query);
+        <?php $view_stock_query = "SELECT * FROM Assets WHERE type ='stock'";
+        $show = mysqli_query($db, $view_stock_query);
         while ($row = mysqli_fetch_array($show)) {
             $tickers = $row[0];
             $asset_name = $row[1];

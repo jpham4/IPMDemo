@@ -82,6 +82,7 @@ if (isset($_GET['logout'])) {
 </div>
 -->
 <h2>Admin</h2>
+<button type="button" class="btn btn-success">Create User</button>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>

@@ -6,7 +6,7 @@ header('Content-Type: application/json');
 // $query = sprintf("SELECT userid, facebook, twitter, googleplus FROM followers");
 
 //$userID = mysqli_query("SELECT id FROM Account WHERE user_type='users'" .$_SESSION['id']);
-$query = sprintf("SELECT date_posted, worth from portfolioHistory where portfolioID = 6");
+$query = sprintf("SELECT date_posted, worth from portfolioHistory where portfolioID = 5");
 
 //execute query
 $result = $db->query($query);
