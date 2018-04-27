@@ -12,3 +12,18 @@ function addSelect() {
     }
     return false;
 }
+
+function removeSelect() {
+    var select = document.getElementById('inputGroupSelect02').value;
+    switch (select){
+        case "RemoveStocks":
+            var url = "removeStocks.php";
+            location.href = url + "?selectedVal=RemoveStocks";
+            break;
+        case "RemoveCrypto":
+            var url2 = "removeCrypto.php";
+            location.href = url2 + "?selectedVal=RemoveCrypto";
+        default:
+    }
+    return false;
+}
