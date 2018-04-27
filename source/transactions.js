@@ -8,10 +8,8 @@ function addSelect() {
         case "AddCrypto":
             var url2 = "addCrypto.php";
             location.href = url2 + "?selectedVal=AddCrypto";
-        default:
     }
     return false;
-<<<<<<< HEAD
 }
 
 function removeSelect() {
@@ -24,9 +22,6 @@ function removeSelect() {
         case "RemoveCrypto":
             var url2 = "removeCrypto.php";
             location.href = url2 + "?selectedVal=RemoveCrypto";
-        default:
     }
     return false;
-=======
->>>>>>> Revert "fixed userID graph issue"
 }
