@@ -81,10 +81,53 @@ if (isset($_GET['logout'])) {
     </div>
 </div>
 -->
-<h2>Admin</h2>
-<button type="button" class="btn btn-success">Create User</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="pull-left">Admin</h2>
+        </div>
+        <div class="col-md-6 mt-1 text-right">
+            <a href="#" class="btn btn-success .navbar-right" data-toggle="modal" data-target="#createModal">Add New User</a>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="form">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="createModalLabel">Create New User</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="admin_index.php" class="form-group">
+                    <?php echo display_error(); ?>
+                    <div class="form-group">
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus value="<?php echo $email; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" name="password_1" placeholder="Password" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword2" class="sr-only">Confirm Password</label>
+                        <input type="password" id="inputPassword2" class="form-control" name="password_2" placeholder="Confirm Password" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" name="register_btn">Create</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="table-responsive">
-    <table class="table table-striped table-sm">
+    <table class="table table-bordered table-hover table-striped table-sm">
         <thead>
         <tr>
             <th style="width: 30%">User ID</th>
@@ -103,12 +146,13 @@ if (isset($_GET['logout'])) {
                 <!-- Showing results in the table -->
                 <td><?php echo $user_id; ?></td>
                 <td><?php echo $user_email; ?></td>
-                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#basicModal">Delete</a>
+                <td class="text-center"><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#basicModal">Delete</a>
                 </td>
             </tr>
         <?php } ?>
         <!-- basic modal -->
-        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -122,7 +166,8 @@ if (isset($_GET['logout'])) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="delete.php?del=<?php echo $user_id ?>"><button type="button" class="btn btn-danger">Delete</button>
+                        <a href="delete.php?del=<?php echo $user_id ?>">
+                            <button type="button" class="btn btn-danger">Delete</button>
                     </div>
                 </div>
             </div>
