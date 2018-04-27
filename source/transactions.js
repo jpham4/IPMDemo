@@ -11,6 +11,7 @@ function addSelect() {
         default:
     }
     return false;
+<<<<<<< HEAD
 }
 
 function removeSelect() {
@@ -26,4 +27,6 @@ function removeSelect() {
         default:
     }
     return false;
+=======
+>>>>>>> Revert "fixed userID graph issue"
 }

@@ -81,6 +81,7 @@ if (isset($_GET['logout'])) {
     </div>
 </div>
 -->
+<<<<<<< HEAD
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
@@ -128,6 +129,12 @@ if (isset($_GET['logout'])) {
 </div>
 <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped table-sm">
+=======
+<h2>Admin</h2>
+<button type="button" class="btn btn-success">Create User</button>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+>>>>>>> Revert "fixed userID graph issue"
         <thead>
         <tr>
             <th style="width: 30%">User ID</th>
@@ -146,13 +153,21 @@ if (isset($_GET['logout'])) {
                 <!-- Showing results in the table -->
                 <td><?php echo $user_id; ?></td>
                 <td><?php echo $user_email; ?></td>
+<<<<<<< HEAD
                 <td class="text-center"><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#basicModal">Delete</a>
+=======
+                <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#basicModal">Delete</a>
+>>>>>>> Revert "fixed userID graph issue"
                 </td>
             </tr>
         <?php } ?>
         <!-- basic modal -->
+<<<<<<< HEAD
         <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
              aria-hidden="true">
+=======
+        <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+>>>>>>> Revert "fixed userID graph issue"
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -166,8 +181,12 @@ if (isset($_GET['logout'])) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<<<<<<< HEAD
                         <a href="delete.php?del=<?php echo $user_id ?>">
                             <button type="button" class="btn btn-danger">Delete</button>
+=======
+                        <a href="delete.php?del=<?php echo $user_id ?>"><button type="button" class="btn btn-danger">Delete</button>
+>>>>>>> Revert "fixed userID graph issue"
                     </div>
                 </div>
             </div>

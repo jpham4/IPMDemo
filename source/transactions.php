@@ -95,6 +95,7 @@
                 <h5 class="card-title">Choose Investment Type</h5>
                 <p class="card-text">Choose which type of investment type you would like to remove.</p>
                 <div class="input-group mb-3">
+<<<<<<< HEAD
                     <select class="custom-select" id="inputGroupSelect02" name="inputGroupSelect02">
                         <option selected disabled>Select investment</option>
                         <option value="RemoveStocks">Stocks</option>
@@ -103,6 +104,16 @@
                 </div>
                 <div class="container">
                 <button type="submit" class="btn btn-md btn-primary" onclick="removeSelect()" value="Submit">Submit</button>
+=======
+                    <select class="custom-select" id="inputGroupSelect02">
+                        <option selected disabled>Select investment</option>
+                        <option value="1">Stocks</option>
+                        <option value="2">Cryptocurrency</option>
+                    </select>
+                </div>
+                <div class="container">
+                <button type="submit" class="btn btn-md btn-primary" value="Submit" name="removeSubmit">Submit</button>
+>>>>>>> Revert "fixed userID graph issue"
                 </div>
             </div>
         </div>
